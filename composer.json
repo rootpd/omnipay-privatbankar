@@ -1,0 +1,36 @@
+{
+  "name": "rootpd/omnipay-privatbankar",
+  "type": "library",
+  "description": "Privatbankar driver for the Omnipay payment processing library",
+  "keywords": [
+    "privatbankar",
+    "gateway",
+    "merchant",
+    "omnipay",
+    "otp",
+    "pay",
+    "payment"
+  ],
+  "homepage": "https://github.com/rootpd/omnipay-privatbankar",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Peter Dulacka",
+      "email": "dulacka@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Omnipay\\Privatbankar\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^7.2",
+    "guzzlehttp/guzzle": "~6.0",
+    "guzzlehttp/psr7": "^1.4",
+    "league/omnipay": "~3.0"
+  },
+  "scripts": {
+    "test": "phpunit"
+  }
+}
