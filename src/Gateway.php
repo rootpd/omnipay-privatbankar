@@ -7,7 +7,7 @@ use Omnipay\Common\AbstractGateway;
 class Gateway extends AbstractGateway
 {
     protected const URL_SANDBOX = 'http://payment.dev2.innobotics.hu';
-    protected const URL_PRODUCTION = 'http://payment.dev2.innobotics.hu'; // TODO: get production endpoint
+    protected const URL_PRODUCTION = 'https://fizetes.privatbankar.hu';
 
     public function getName()
     {
