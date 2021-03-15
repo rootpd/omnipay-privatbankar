@@ -3,6 +3,8 @@
 namespace Omnipay\Privatbankar;
 
 use Omnipay\Common\AbstractGateway;
+use Omnipay\Privatbankar\Message\PurchaseRequest;
+use Omnipay\Privatbankar\Message\ChargeRequest;
 
 class Gateway extends AbstractGateway
 {
@@ -33,22 +35,19 @@ class Gateway extends AbstractGateway
 
     public function setApiUrl()
     {
-        if ($this->getTestMode()) {
-            $apiUrl = self::URL_SANDBOX;
-        } else {
-            $apiUrl = self::URL_PRODUCTION;
-        }
-
-        $this->setParameter('apiUrl', $apiUrl);
+        $this->setParameter(
+            'apiUrl',
+            $this->getTestMode() ? self::URL_SANDBOX : self::URL_PRODUCTION
+        );
     }
 
     public function purchase(array $parameters = array())
     {
-        return $this->createRequest(\Omnipay\Privatbankar\Message\PurchaseRequest::class, $parameters);
+        return $this->createRequest(PurchaseRequest::class, $parameters);
     }
 
     public function charge(array $parameters = array())
     {
-        return $this->createRequest(\Omnipay\Privatbankar\Message\ChargeRequest::class, $parameters);
+        return $this->createRequest(ChargeRequest::class, $parameters);
     }
 }
